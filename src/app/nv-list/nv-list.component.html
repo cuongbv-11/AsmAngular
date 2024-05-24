@@ -1,0 +1,19 @@
+<table class="table table-bordered border border-primary">
+  <caption align="top" class="bg-warning p-1 fw-bold">
+    Danh Sach nhan vien
+  </caption>
+  <tr>
+    <th>id</th>
+    <th>Ho ten</th>
+    <th>Ngay sinh</th>
+    <th>Gioi tinh</th>
+    <th class="text-end p-1">Khu vuc</th>
+  </tr>
+  <tr *ngFor="let nv of list_nhan_vien">
+    <td class="p-2 px-2">{{ nv.id }}</td>
+    <td>{{ nv.Ho }} {{ nv.Ten }}</td>
+    <td>{{ nv.NgaySinh | date : "dd/mm/yyyy" }}</td>
+    <td>{{ nv.GioiTinh == true ? "Nam" : "Nu" }}</td>
+    <td class="text-end p-1 px-2">{{ nv.KhuVuc }}</td>
+  </tr>
+</table>

@@ -1,0 +1,17 @@
+<h3 class="bg-warning mt-0 p-1 fs-4">Danh Sach Task</h3>
+<div *ngFor="let task of list_task" class="mt-2">
+  <div class="ms-1">
+    <b>{{ task.ten_task }}</b
+    ><br />{{ task.mo_ta }}
+  </div>
+  <div class="mb-0 px-3 bp-3 border-bottom border-primary d-flex">
+    <div class="col-6">
+      Priority:{{ task.priority }}<br />
+      Status:{{ task.status }}
+    </div>
+  </div>
+  <div class="col-6">
+    Nhan Vienn {{ task.nhan_vien_id }}<br />
+    DuAn:{{ task.du_an_id }}
+  </div>
+</div>
