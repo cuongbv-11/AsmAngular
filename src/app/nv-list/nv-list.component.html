@@ -8,12 +8,97 @@
     <th>Ngay sinh</th>
     <th>Gioi tinh</th>
     <th class="text-end p-1">Khu vuc</th>
+    <th>ChucNang</th>
   </tr>
   <tr *ngFor="let nv of list_nhan_vien">
     <td class="p-2 px-2">{{ nv.id }}</td>
     <td>{{ nv.Ho }} {{ nv.Ten }}</td>
     <td>{{ nv.NgaySinh | date : "dd/mm/yyyy" }}</td>
     <td>{{ nv.GioiTinh == true ? "Nam" : "Nu" }}</td>
-    <td class="text-end p-1 px-2">{{ nv.KhuVuc }}</td>
+    <td class="text-end p-1 px-2">
+      {{ nv.KhuVuc }}
+    </td>
+    <button (click)="editNvien(nv)" class="btn btn-warning">Sửa</button>
+    <button (click)="deleteProject(nv.id)" class="btn btn-danger">Xóa</button>
   </tr>
 </table>
+
+<!-- Edit Project Form -->
+<div *ngIf="editingProject" class="edit-form">
+  <h3>Chỉnh sửa dự án</h3>
+  <form (ngSubmit)="updateProject()">
+    <div class="form-group">
+      <label for="projectName">Ho:</label>
+      <input
+        id="projectName"
+        class="form-control"
+        [(ngModel)]="editingProject.Ho"
+        name="ten_du_an"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="projectStartDate">Ten:</label>
+      <input
+        id="projectName"
+        class="form-control"
+        [(ngModel)]="editingProject.Ten"
+        name="Ten"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="projectBudget"> NgaySinh:</label>
+      <input
+        id="projectStartDate"
+        type="date"
+        class="form-control"
+        [(ngModel)]="editingProject.NgaySinh"
+        name=" NgaySinh"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label>GioiTinh:</label><br />
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          type="radio"
+          id="gioiTinhNam"
+          [(ngModel)]="editingProject.GioiTinh"
+          name="GioiTinh"
+          value="Nam"
+          required
+        />
+        <label class="form-check-label" for="gioiTinhNam">Nam</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          type="radio"
+          id="gioiTinhNu"
+          [(ngModel)]="editingProject.GioiTinh"
+          name="GioiTinh"
+          value="Nữ"
+          required
+        />
+        <label class="form-check-label" for="gioiTinhNu">Nữ</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="projectBudget"> KhuVuc:</label>
+      <input
+        id="projectBudget"
+        type="projectName"
+        class="form-control"
+        [(ngModel)]="editingProject.KhuVuc"
+        name=" KhuVuc"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Lưu</button>
+    <button type="button" (click)="cancelEdit()" class="btn btn-secondary">
+      Hủy
+    </button>
+  </form>
+</div>

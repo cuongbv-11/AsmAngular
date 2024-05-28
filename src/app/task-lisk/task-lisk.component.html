@@ -1,17 +1,96 @@
 <h3 class="bg-warning mt-0 p-1 fs-4">Danh Sach Task</h3>
-<div *ngFor="let task of list_task" class="mt-2">
+<div *ngFor="let task of list_tasks" class="mt-2 border-bottom border-primary">
   <div class="ms-1">
     <b>{{ task.ten_task }}</b
     ><br />{{ task.mo_ta }}
   </div>
-  <div class="mb-0 px-3 bp-3 border-bottom border-primary d-flex">
+  <div class="d-flex justify-content-between mb-0 px-3">
     <div class="col-6">
-      Priority:{{ task.priority }}<br />
-      Status:{{ task.status }}
+      Priority: {{ task.priority }}<br />
+      Status: {{ task.status }}
+    </div>
+    <div class="col-6">
+      Nhan Vien: {{ task.nhan_vien_id }}<br />
+      DuAn: {{ task.du_an_id }}
     </div>
   </div>
-  <div class="col-6">
-    Nhan Vienn {{ task.nhan_vien_id }}<br />
-    DuAn:{{ task.du_an_id }}
+  <div class="d-flex justify-content-end mt-2">
+    <button (click)="editNvien(task)" class="btn btn-warning me-2">Sửa</button>
+    <button (click)="deleteProject(task.id)" class="btn btn-danger">Xóa</button>
   </div>
+</div>
+
+<!-- Edit Project Form -->
+<div *ngIf="editTasks" class="edit-form">
+  <h3>Chỉnh sửa dự án</h3>
+  <form (ngSubmit)="updateProject()">
+    <div class="form-group">
+      <label for="projectName">Tentask:</label>
+      <input
+        id="projectName"
+        class="form-control"
+        [(ngModel)]="editTasks.ten_task"
+        name="ten_du_an"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="projectStartDate">Mota:</label>
+      <input
+        id="projectName"
+        class="form-control"
+        [(ngModel)]="editTasks.mo_ta"
+        name="Ten"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="projectBudget"> Duan:</label>
+      <input
+        id="projectStartDate"
+        type="string"
+        class="form-control"
+        [(ngModel)]="editTasks.du_an_id"
+        name=" NgaySinh"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="projectBudget">Nhanvien:</label>
+      <input
+        id="projectBudget"
+        type="number"
+        class="form-control"
+        [(ngModel)]="editTasks.nhan_vien_id"
+        name=" GioiTinh"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="projectBudget"> priority:</label>
+      <input
+        id="projectBudget"
+        type="number"
+        class="form-control"
+        [(ngModel)]="editTasks.priority"
+        name=" KhuVuc"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="projectBudget"> status:</label>
+      <input
+        id="projectBudget"
+        type="number"
+        class="form-control"
+        [(ngModel)]="editTasks.status"
+        name=" KhuVuc"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Lưu</button>
+    <button type="button" (click)="cancelEdit()" class="btn btn-secondary">
+      Hủy
+    </button>
+  </form>
 </div>

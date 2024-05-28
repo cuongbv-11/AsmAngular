@@ -3,6 +3,6 @@ export interface IDuAn {
   ten_du_an: string;
   ngay_start: string;
   tien: number;
-  leader: number;
+  leader: string | number;
   thanh_vien: string[];
 }

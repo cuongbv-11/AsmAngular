@@ -1,3 +1,4 @@
+<!-- Table to display list of projects -->
 <table class="table table-bordered border border-primary">
   <caption align="top" class="bg-warning p-1 fw-bold">
     Danh Sach du an
@@ -7,15 +8,65 @@
       <th>id</th>
       <th>Ten du an</th>
       <th>Ngay start</th>
-      <th class="text-end p-1">Tien</th>
+      <th>Tien</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let da of list_du_an">
-      <td class="p-2">{{ da.id }}</td>
-      <td class="p-2">{{ da.ten_du_an }}</td>
-      <td class="p-2">{{ da.ngay_start }}</td>
-      <td class="text-end p-2">{{ da.tien | number }}VND</td>
+      <td>{{ da.id }}</td>
+      <td>{{ da.ten_du_an }}</td>
+      <td>{{ da.ngay_start }}</td>
+      <td>{{ da.tien | number }} VND</td>
+      <td>
+        <button (click)="editProject(da)" class="btn btn-warning">Sửa</button>
+        <button (click)="deleteProject(da.id)" class="btn btn-danger">
+          Xóa
+        </button>
+      </td>
     </tr>
   </tbody>
 </table>
+
+<!-- Edit Project Form -->
+<div *ngIf="editingProject" class="edit-form">
+  <h3>Chỉnh sửa dự án</h3>
+  <form (ngSubmit)="updateProject()">
+    <div class="form-group">
+      <label for="projectName">Tên dự án:</label>
+      <input
+        id="projectName"
+        class="form-control"
+        [(ngModel)]="editingProject.ten_du_an"
+        name="ten_du_an"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="projectStartDate">Ngày bắt đầu:</label>
+      <input
+        id="projectStartDate"
+        type="date"
+        class="form-control"
+        [(ngModel)]="editingProject.ngay_start"
+        name="ngay_start"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="projectBudget">Tiền:</label>
+      <input
+        id="projectBudget"
+        type="number"
+        class="form-control"
+        [(ngModel)]="editingProject.tien"
+        name="tien"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Lưu</button>
+    <button type="button" (click)="cancelEdit()" class="btn btn-secondary">
+      Hủy
+    </button>
+  </form>
+</div>

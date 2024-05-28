@@ -1,1 +1,29 @@
-<p>task-them works!</p>
+<div class="container">
+  <form #create="ngForm" (ngSubmit)="onCreate(create.value)">
+    <div>
+      <label for="" class="form-label">ten_task</label>
+      <input type="text" class="form-control" name="ten_task" ngModel />
+    </div>
+    <div>
+      <label for="" class="form-label">mo_ta</label>
+      <input type="text" class="form-control" name="mo_ta" ngModel />
+    </div>
+    <div>
+      <label for="" class="form-label">du_an_id</label>
+      <input type="text" class="form-control" name="du_an_id" ngModel />
+    </div>
+    <div>
+      <label for="" class="form-label">nhan_vien_id</label>
+      <input type="text" class="form-control" name="nhan_vien_id" ngModel />
+    </div>
+    <div>
+      <label for="" class="form-label">priority</label>
+      <input type="text" class="form-control" name="priority" ngModel />
+    </div>
+    <div>
+      <label for="" class="form-label">status</label>
+      <input type="text" class="form-control" name="status" ngModel />
+    </div>
+    <button type="submit" class="btn btn-primary">Them Moi</button>
+  </form>
+</div>

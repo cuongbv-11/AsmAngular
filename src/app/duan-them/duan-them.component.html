@@ -1,1 +1,35 @@
-<p>duan-them works!</p>
+<div class="container">
+  <form #create="ngForm" (ngSubmit)="onCreate(create.value)">
+    <div>
+      <label for="" class="form-label">Id</label>
+      <input type="text" class="form-control" name="Id" ngModel />
+    </div>
+    <div>
+      <label for="" class="form-label">ten_du_an</label>
+      <input type="text" class="form-control" name="ten_du_an" ngModel />
+    </div>
+    <div>
+      <label for="" class="form-label">ngay_start</label>
+      <input type="number" class="form-control" name="ngay_start" ngModel />
+    </div>
+    <div>
+      <label for="" class="form-label">tien</label>
+      <input
+        id="projectBudget"
+        type="number"
+        class="form-control"
+        name="tien"
+        ngModel
+      />
+    </div>
+    <div>
+      <label for="" class="form-label">leader</label>
+      <input type="text" class="form-control" name="leader" ngModel />
+    </div>
+    <div>
+      <label for="" class="form-label">thanh_vien</label>
+      <input type="text" class="form-control" name="thanh_vien" ngModel />
+    </div>
+    <button type="submit" class="btn btn-primary">Them Moi</button>
+  </form>
+</div>

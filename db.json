@@ -1,0 +1,206 @@
+{
+  "projects": [
+    {
+      "id": "3",
+      "ten_du_an": "Du An Ca",
+      "ngay_start": "2024-03-15",
+      "tien": 1500000000,
+      "leader": 103,
+      "thanh_vien": [
+        "207",
+        "208",
+        "209"
+      ]
+    },
+    {
+      "id": "3",
+      "ten_du_an": "Du An C",
+      "ngay_start": "2024-03-20",
+      "tien": 1500000,
+      "leader": 103,
+      "thanh_vien": [
+        "207",
+        "208",
+        "209"
+      ]
+    },
+    {
+      "id": "3",
+      "ten_du_an": "Du An C",
+      "ngay_start": "2024-03-20",
+      "tien": 1500000,
+      "leader": 103,
+      "thanh_vien": [
+        "207",
+        "208",
+        "209"
+      ]
+    },
+    {
+      "id": "3",
+      "ten_du_an": "Du An C",
+      "ngay_start": "2024-03-20",
+      "tien": 1500000,
+      "leader": 103,
+      "thanh_vien": [
+        "207",
+        "208",
+        "209"
+      ]
+    }
+  ],
+  "employees": [
+    {
+      "id": "101",
+      "Ho": "Nguyen",
+      "Ten": "An",
+      "NgaySinh": "1985-05-15",
+      "GioiTinh": true,
+      "KhuVuc": "Hanoi"
+    },
+    {
+      "id": "102",
+      "Ho": "Tran",
+      "Ten": "Binh",
+      "NgaySinh": "1990-08-20",
+      "GioiTinh": true,
+      "KhuVuc": "HCMC"
+    },
+    {
+      "id": "103",
+      "Ho": "Le",
+      "Ten": "Chi",
+      "NgaySinh": "1988-11-30",
+      "GioiTinh": false,
+      "KhuVuc": "Da Nang"
+    },
+    {
+      "id": "201",
+      "Ho": "Pham",
+      "Ten": "Dung",
+      "NgaySinh": "1992-07-12",
+      "GioiTinh": true,
+      "KhuVuc": "Can Tho"
+    },
+    {
+      "id": "202",
+      "Ho": "Hoang",
+      "Ten": "Lan",
+      "NgaySinh": "1995-03-25",
+      "GioiTinh": false,
+      "KhuVuc": "Hai Phong"
+    },
+    {
+      "id": "203",
+      "Ho": "Vu",
+      "Ten": "Minh",
+      "NgaySinh": "1987-12-05",
+      "GioiTinh": true,
+      "KhuVuc": "Hanoi"
+    },
+    {
+      "id": "204",
+      "Ho": "Do",
+      "Ten": "Oanh",
+      "NgaySinh": "1993-09-18",
+      "GioiTinh": false,
+      "KhuVuc": "HCMC"
+    },
+    {
+      "id": "205",
+      "Ho": "Bui11",
+      "Ten": "Phuc11",
+      "NgaySinh": "1989-06-17",
+      "GioiTinh": "Nữ",
+      "KhuVuc": "Hn"
+    },
+    {
+      "id": "207",
+      "Ho": "Phan",
+      "Ten": "Son",
+      "NgaySinh": "1994-01-30",
+      "GioiTinh": true,
+      "KhuVuc": "Quang Ninh"
+    },
+    {
+      "id": "208",
+      "Ho": "Dinh",
+      "Ten": "Thu",
+      "NgaySinh": "1996-10-19",
+      "GioiTinh": false,
+      "KhuVuc": 1
+    },
+    {
+      "id": "209",
+      "Ho": "Ly",
+      "Ten": "Vinh",
+      "NgaySinh": "1998-02-28",
+      "GioiTinh": true,
+      "KhuVuc": "HCMC"
+    },
+    {
+      "id": "70c5",
+      "Ho": "cuong",
+      "Ten": "viet",
+      "NgaySinh": "2024-05-25",
+      "GioiTinh": "Nu",
+      "KhuVuc": "hn"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "1",
+      "ten_task": "Task 11",
+      "mo_ta": "Description of Task 1ss",
+      "du_an_id": 1,
+      "nhan_vien_id": 2011,
+      "priority": 1,
+      "status": 1
+    },
+    {
+      "id": "2",
+      "ten_task": "Task 2",
+      "mo_ta": "Description of Task 2",
+      "du_an_id": 1,
+      "nhan_vien_id": 202,
+      "priority": 2,
+      "status": 1
+    },
+    {
+      "id": "3",
+      "ten_task": "Task 3",
+      "mo_ta": "Description of Task 3",
+      "du_an_id": 2,
+      "nhan_vien_id": 203,
+      "priority": 3,
+      "status": 2
+    },
+    {
+      "id": "4",
+      "ten_task": "Task 4",
+      "mo_ta": "Description of Task 4",
+      "du_an_id": 2,
+      "nhan_vien_id": 204,
+      "priority": 1,
+      "status": 0
+    },
+    {
+      "id": "5",
+      "ten_task": "Task 5",
+      "mo_ta": "Description of Task 5",
+      "du_an_id": 3,
+      "nhan_vien_id": 205,
+      "priority": 2,
+      "status": 1
+    },
+    {
+      "id": "ef6f",
+      "ten_task": "1",
+      "mo_ta": "1",
+      "du_an_id": "1",
+      "nhan_vien_id": "1",
+      "priority": "1",
+      "status": "1"
+    }
+  ]
+}
