@@ -34,7 +34,7 @@
       <nav id="thanhmenu" class="bg-success" style="height: 60px">
         <nav class="navbar navbar-expand-lg navbar-dark bg-success">
           <div class="container-fluid">
-            <a class="navbar-brand" href="#">Quản lý dự án</a>
+            <a class="navbar-brand" href="#">Trang Chủ</a>
             <button
               class="navbar-toggler"
               type="button"
@@ -118,6 +118,16 @@
                   </ul>
                 </li>
               </ul>
+              <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="#" routerLink="/login">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" routerLink="/register"
+                    >Register</a
+                  >
+                </li>
+              </ul>
               <form class="d-flex" role="search">
                 <input
                   class="form-control me-2"
@@ -136,7 +146,7 @@
 
       <nav id="breadcrumb" class="bg-warning-subtle" style="height: 45px"></nav>
 
-      <main class="d-flex" style="min-height: 300px">
+      <main class="d-flex" style="min-height: 450px">
         <article class="col-md-9 bg-info-subtle" id="cottrai">
           <router-outlet></router-outlet>
         </article>

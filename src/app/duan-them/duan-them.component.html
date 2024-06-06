@@ -1,35 +1,25 @@
 <div class="container">
   <form #create="ngForm" (ngSubmit)="onCreate(create.value)">
     <div>
-      <label for="" class="form-label">Id</label>
-      <input type="text" class="form-control" name="Id" ngModel />
-    </div>
-    <div>
-      <label for="" class="form-label">ten_du_an</label>
+      <label for="ten_du_an" class="form-label">Tên Dự Án</label>
       <input type="text" class="form-control" name="ten_du_an" ngModel />
     </div>
     <div>
-      <label for="" class="form-label">ngay_start</label>
-      <input type="number" class="form-control" name="ngay_start" ngModel />
+      <label for="ngay_start" class="form-label">Ngày Bắt Đầu</label>
+      <input type="date" class="form-control" name="ngay_start" ngModel />
     </div>
     <div>
-      <label for="" class="form-label">tien</label>
-      <input
-        id="projectBudget"
-        type="number"
-        class="form-control"
-        name="tien"
-        ngModel
-      />
+      <label for="tien" class="form-label">Tiền</label>
+      <input type="number" class="form-control" name="tien" ngModel />
     </div>
     <div>
-      <label for="" class="form-label">leader</label>
+      <label for="leader" class="form-label">Leader</label>
       <input type="text" class="form-control" name="leader" ngModel />
     </div>
     <div>
-      <label for="" class="form-label">thanh_vien</label>
+      <label for="thanh_vien" class="form-label">Thành Viên</label>
       <input type="text" class="form-control" name="thanh_vien" ngModel />
     </div>
-    <button type="submit" class="btn btn-primary">Them Moi</button>
+    <button type="submit" class="btn btn-primary">Thêm Mới</button>
   </form>
 </div>

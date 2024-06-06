@@ -1,10 +1,10 @@
 {
   "projects": [
     {
-      "id": "3",
-      "ten_du_an": "Du An Ca",
-      "ngay_start": "2024-03-15",
-      "tien": 1500000000,
+      "id": "1",
+      "ten_du_an": "Du An C",
+      "ngay_start": "2024-03-20",
+      "tien": 1500000,
       "leader": 103,
       "thanh_vien": [
         "207",
@@ -13,7 +13,7 @@
       ]
     },
     {
-      "id": "3",
+      "id": "2",
       "ten_du_an": "Du An C",
       "ngay_start": "2024-03-20",
       "tien": 1500000,
@@ -37,7 +37,7 @@
       ]
     },
     {
-      "id": "3",
+      "id": "4",
       "ten_du_an": "Du An C",
       "ngay_start": "2024-03-20",
       "tien": 1500000,
@@ -47,14 +47,34 @@
         "208",
         "209"
       ]
+    },
+    {
+      "id": "5",
+      "ten_du_an": "Du An C",
+      "ngay_start": "2024-03-20",
+      "tien": 1500000,
+      "leader": 103,
+      "thanh_vien": [
+        "207",
+        "208",
+        "209"
+      ]
+    },
+    {
+      "ten_du_an": "11",
+      "ngay_start": "1111-11-11",
+      "tien": 1111,
+      "leader": "111",
+      "thanh_vien": "111",
+      "id": "sQWb2E1"
     }
   ],
   "employees": [
     {
       "id": "101",
-      "Ho": "Nguyen",
+      "Ho": "Nguyen1",
       "Ten": "An",
-      "NgaySinh": "1985-05-15",
+      "NgaySinh": "1991-06-15",
       "GioiTinh": true,
       "KhuVuc": "Hanoi"
     },
@@ -135,28 +155,11 @@
       "Ho": "Ly",
       "Ten": "Vinh",
       "NgaySinh": "1998-02-28",
-      "GioiTinh": true,
+      "GioiTinh": "Nam",
       "KhuVuc": "HCMC"
-    },
-    {
-      "id": "70c5",
-      "Ho": "cuong",
-      "Ten": "viet",
-      "NgaySinh": "2024-05-25",
-      "GioiTinh": "Nu",
-      "KhuVuc": "hn"
     }
   ],
   "tasks": [
-    {
-      "id": "1",
-      "ten_task": "Task 11",
-      "mo_ta": "Description of Task 1ss",
-      "du_an_id": 1,
-      "nhan_vien_id": 2011,
-      "priority": 1,
-      "status": 1
-    },
     {
       "id": "2",
       "ten_task": "Task 2",
@@ -194,13 +197,20 @@
       "status": 1
     },
     {
-      "id": "ef6f",
+      "id": "46ab",
       "ten_task": "1",
       "mo_ta": "1",
       "du_an_id": "1",
       "nhan_vien_id": "1",
       "priority": "1",
       "status": "1"
+    }
+  ],
+  "users": [
+    {
+      "email": "cuongbvph39353@fpt.edu.vn",
+      "password": "$2a$10$7jk9APIt9k/y3o75vMI0meN0njKeCXGTRe.crggYpwub16fecqzRm",
+      "id": 1
     }
   ]
 }

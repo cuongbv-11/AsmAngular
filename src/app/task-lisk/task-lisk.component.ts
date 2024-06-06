@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { ITask } from '../itask';
+import { ITask } from '../intefaces/itask';
 import { FormsModule } from '@angular/forms';
+import { TaskService } from '../service/task.service';
 
 @Component({
   selector: 'app-task-lisk',
@@ -13,65 +14,64 @@ import { FormsModule } from '@angular/forms';
 export class TaskLiskComponent {
   list_tasks: ITask[] = [];
   editTasks: ITask | null = null;
+  constructor(private taskService: TaskService) {}
+
   ngOnInit(): void {
-    fetch(`http://localhost:3000/tasks`)
-      .then((res) => res.json())
-      .then((data) => {
-        this.list_tasks = data;
-      });
+    this.fetchListTask();
   }
-  editNvien(project: ITask): void {
-    const confirmed = confirm(`Bạn có chắc chắn muốn sửa dự án ${project.id}?`);
+
+  fetchListTask(): void {
+    this.taskService.getListTask().subscribe((data) => {
+      this.list_tasks = data;
+    });
+  }
+
+  editTask(project: ITask): void {
+    const confirmed = confirm(
+      `Bạn có chắc chắn muốn sửa nhân viên có ID ${project.id}?`
+    );
     if (confirmed) {
-      this.editTasks = { ...project }; // Tạo một bản sao của project để chỉnh sửa
+      this.editTasks = { ...project }; // Tạo một bản sao của nhân viên để chỉnh sửa
     }
   }
 
-  updateProject(): void {
+  updateTask(): void {
     if (this.editTasks) {
-      fetch(`http://localhost:3000/tasks/${this.editTasks.id}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(this.editTasks),
-      })
-        .then((res) => res.json())
-        .then((updatedProject) => {
+      this.taskService.editTask(this.editTasks).subscribe(
+        (updateTask) => {
           const index = this.list_tasks.findIndex(
-            (p) => p.id === updatedProject.id
+            (p) => p.id === updateTask.id
           );
           if (index !== -1) {
-            this.list_tasks[index] = updatedProject;
+            this.list_tasks[index] = updateTask;
           }
           this.editTasks = null;
-        })
-        .catch((error) => {
-          console.error('Lỗi khi cập nhật dự án:', error);
-        });
+        },
+        (error) => {
+          console.error('Lỗi khi cập nhật nhân viên:', error);
+        }
+      );
     }
   }
 
   cancelEdit(): void {
     this.editTasks = null;
   }
-  deleteProject(id: number): void {
-    const confirmed = confirm(`Bạn có chắc chắn muốn xóa dự án có ID ${id}?`);
+
+  deletetask(id: number): void {
+    const confirmed = confirm(
+      `Bạn có chắc chắn muốn xóa nhân viên có ID ${id}?`
+    );
     if (confirmed) {
-      fetch(`http://localhost:3000/tasks/${id}`, {
-        method: 'DELETE',
-      })
-        .then((res) => {
-          if (res.ok) {
-            console.log(`Dự án với ID ${id} đã được xóa thành công.`);
-            this.list_tasks = this.list_tasks.filter((p) => p.id !== id);
-          } else {
-            console.error(`Xóa dự án với ID ${id} thất bại.`);
-          }
-        })
-        .catch((error) => {
-          console.error('Lỗi khi xóa dự án:', error);
-        });
+      this.taskService.deleteTask(id).subscribe(
+        () => {
+          console.log(`Nhân viên với ID ${id} đã được xóa thành công.`);
+          this.list_tasks = this.list_tasks.filter((p) => p.id !== id);
+        },
+        (error) => {
+          console.error(`Xóa nhân viên với ID ${id} thất bại.`);
+        }
+      );
     }
   }
 }

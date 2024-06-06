@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { INhanVien } from '../intefaces/inhan-vien';
+import { NhanVienService } from '../service/nhan-vien.service';
 
 @Component({
   selector: 'app-nv-them',
@@ -11,10 +13,13 @@ import { Router } from '@angular/router';
   styleUrl: './nv-them.component.css',
 })
 export class NvThemComponent {
-  constructor(private http: HttpClient, private router: Router) {}
-  onCreate(employees: any): void {
-    let apiUrl = 'http://localhost:3000/employees';
-    this.http.post(apiUrl, employees).subscribe((res) => {
+  constructor(
+    private nhanvienService: NhanVienService,
+    private router: Router
+  ) {}
+
+  onCreate(project: INhanVien): void {
+    this.nhanvienService.createProject(project).subscribe((res) => {
       if (res) {
         alert('Them Nhan Vien Thanh cong');
         this.router.navigate(['/nhan_vien']);
